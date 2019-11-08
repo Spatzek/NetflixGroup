@@ -17,7 +17,7 @@ public class MovieDAO {
     public List<Movie> getAllMovies() throws FileNotFoundException, IOException
     {
         File file = new File(MOVIE_SOURCE);
-        System.out.println("is it there:" + file.canRead());
+        System.out.println(file.canRead() + "is it there:");
         BufferedReader br = new BufferedReader(new FileReader(file));
 
         while(true)
@@ -37,6 +37,6 @@ public class MovieDAO {
     public static void main(String[] args) throws IOException
     {
         MovieDAO movieDao = new MovieDAO();
-        movieDao.getAllMovies();
+        List<Movie> allMovies = movieDao.getAllMovies();
     }
 }
